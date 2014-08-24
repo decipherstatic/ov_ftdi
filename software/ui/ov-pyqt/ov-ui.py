@@ -42,8 +42,8 @@ class OV_UI(QMainWindow):
 				if (packet[2][0] >> 4) ^ 0xF != pid:
 					print("Err - bad PID of %02x" % pid)
 			
-			if self.isPacketFiltered(pid):
-				continue
+				if self.isPacketFiltered(pid):
+					continue
 				
 			data = " ".join("%2X" %x for x in packet[2])
 			data = QTableWidgetItem(data)
