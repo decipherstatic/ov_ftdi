@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Sat Aug 23 11:04:32 2014
+# Created: Sat Aug 23 22:36:15 2014
 #      by: PyQt5 UI code generator 5.3.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -35,6 +35,7 @@ class Ui_MainWindow(object):
         self.rxDataTable.setColumnCount(0)
         self.rxDataTable.setObjectName("rxDataTable")
         self.rxDataTable.setRowCount(0)
+        self.rxDataTable.verticalHeader().setVisible(False)
         self.horizontalLayout_2.addWidget(self.rxDataTable)
         self.tabWidget.addTab(self.tab, "")
         self.horizontalLayout.addWidget(self.tabWidget)
@@ -66,6 +67,9 @@ class Ui_MainWindow(object):
         self.filteringPage = QtWidgets.QWidget()
         self.filteringPage.setGeometry(QtCore.QRect(0, 0, 250, 524))
         self.filteringPage.setObjectName("filteringPage")
+        self.filterSOFPackets = QtWidgets.QCheckBox(self.filteringPage)
+        self.filterSOFPackets.setGeometry(QtCore.QRect(0, 10, 84, 19))
+        self.filterSOFPackets.setObjectName("filterSOFPackets")
         self.toolBox.addItem(self.filteringPage, "")
         self.horizontalLayout.addWidget(self.toolBox)
         MainWindow.setCentralWidget(self.centralWidget)
@@ -114,7 +118,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
-        self.toolBox.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -125,6 +129,7 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "USB Speed"))
         self.usbSpeedComboBox.setToolTip(_translate("MainWindow", "Select targets USB bus speed"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), _translate("MainWindow", "OV Control"))
+        self.filterSOFPackets.setText(_translate("MainWindow", "Filter SOF"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.filteringPage), _translate("MainWindow", "Filtering"))
         self.menu_File.setTitle(_translate("MainWindow", "&File"))
         self.menu_Device.setTitle(_translate("MainWindow", "&Device"))
