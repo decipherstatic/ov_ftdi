@@ -58,7 +58,7 @@ class OV_UI(QMainWindow):
 		
 		#self.dev = LibOV.OVDevice()
 	def updateui(self):
-		maxitems = 25
+		maxitems = 30
 		
 		if self.currentIntervalCount >= self.uiCounterInterval:
 			self.updateStatus("%d / second" %(self.packetsPer100ms * 10))
@@ -126,7 +126,7 @@ class OV_UI(QMainWindow):
 
 	def handlePacket(self, packet):
 		error = False
-		
+		flag = ""
 		if packet[FLAG] != 0:
 			if packet[FLAG] & HF0_FIRST:
 				return
