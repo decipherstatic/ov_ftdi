@@ -135,7 +135,7 @@ class OV_UI(QMainWindow):
 			if packet[FLAG] & HF0_OVF:
 				flag += "Overflow"
 			else:
-				flag += "02X" %(packet[FLAG])
+				flag += "%02X" %(packet[FLAG])
 		else:
 			flag = "OK"
 		
